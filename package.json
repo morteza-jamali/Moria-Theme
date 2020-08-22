@@ -10,11 +10,20 @@
     "uikit": "^3.5.6"
   },
   "devDependencies": {
-    "webpack": "^4.44.1"
-  } ,
+    "clean-webpack-plugin": "^3.0.0",
+    "gray-matter": "^4.0.2",
+    "html-webpack-plugin": "^4.3.0",
+    "js-yaml": "^3.14.0",
+    "pug": "^3.0.0",
+    "pug-frontmatter-html-loader": "^0.1.2",
+    "pug-loader": "^2.4.0",
+    "source-map-loader": "^1.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
   "scripts": {
-    "build": "npx webpack" ,
-    "watch": "yarn run build -- --watch" ,
+    "build": "npx webpack",
+    "watch": "yarn run build -- --watch",
     "preview": "yarn run build && jekyll build && jekyll serve"
   }
 }

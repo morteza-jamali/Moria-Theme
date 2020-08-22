@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Morteza Jamali"]
   spec.email         = ["mortezajamali4241@gmail.com"]
 
-  spec.summary       = "TODO: Write a short summary, because Rubygems requires one."
+  spec.summary       = "Write a short summary, because Rubygems requires one."
   spec.homepage      = "https://github.com/morteza-jamali/Moria-Theme"
   spec.license       = "Apache"
 
