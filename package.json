@@ -1,0 +1,20 @@
+{
+  "name": "Moria-Theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/morteza-jamali/Moria-Theme.git",
+  "author": "morteza-jamali <mortezajamali4241@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.8.0",
+    "uikit": "^3.5.6"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1"
+  } ,
+  "scripts": {
+    "build": "npx webpack" ,
+    "watch": "yarn run build -- --watch" ,
+    "preview": "yarn run build && jekyll build && jekyll serve"
+  }
+}
