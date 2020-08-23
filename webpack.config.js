@@ -1,5 +1,6 @@
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const yaml = require('js-yaml');
 const fs = require('fs');
@@ -7,7 +8,10 @@ const config = yaml.safeLoad(fs.readFileSync('./_config.yml', 'utf8'));
 let pug_path = fs.readdirSync(config.MT_directories_paths.pug);
 
 let _plugins = [
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin() ,
+    new MiniCssExtractPlugin({
+        filename: '../css/components.css'
+    })
 ];
 
 pug_path.forEach(function(p) {
@@ -30,7 +34,7 @@ pug_path.forEach(function(p) {
 
 module.exports = {
     mode: 'development' ,
-    entry: './resources/js/app.js',
+    entry: ['./resources/js/app.js' , './resources/sass/components.sass'] ,
     output: {
         filename: 'app.bundle.js',
         path: path.resolve(__dirname, 'assets/js')
@@ -38,6 +42,21 @@ module.exports = {
     plugins: _plugins ,
     module: {
         rules: [
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
+            } ,
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            } ,
             {
                 test: /\.js$/,
                 enforce: 'pre',

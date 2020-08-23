@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./resources/js/app.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,6 +117,28 @@ eval("/*! UIkit 3.5.6 | https://www.getuikit.com | (c) 2014 - 2020 YOOtheme | MI
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var uikit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! uikit */ \"./node_modules/uikit/dist/js/uikit.js\");\n/* harmony import */ var uikit__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(uikit__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var uikit_dist_js_uikit_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uikit/dist/js/uikit-icons */ \"./node_modules/uikit/dist/js/uikit-icons.js\");\n/* harmony import */ var uikit_dist_js_uikit_icons__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(uikit_dist_js_uikit_icons__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n// loads the Icon plugin\nuikit__WEBPACK_IMPORTED_MODULE_0___default.a.use(uikit_dist_js_uikit_icons__WEBPACK_IMPORTED_MODULE_1___default.a);\n\n// components can be called from the imported UIkit reference\nuikit__WEBPACK_IMPORTED_MODULE_0___default.a.notification('Hello world.');\n\n//# sourceURL=webpack:///./resources/js/app.js?");
+
+/***/ }),
+
+/***/ "./resources/sass/components.sass":
+/*!****************************************!*\
+  !*** ./resources/sass/components.sass ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./resources/sass/components.sass?");
+
+/***/ }),
+
+/***/ 0:
+/*!********************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/components.sass ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! ./resources/js/app.js */\"./resources/js/app.js\");\nmodule.exports = __webpack_require__(/*! ./resources/sass/components.sass */\"./resources/sass/components.sass\");\n\n\n//# sourceURL=webpack:///multi_./resources/js/app.js_./resources/sass/components.sass?");
 
 /***/ })
 
