@@ -5,14 +5,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{site.title}}</title>
     <link rel="stylesheet" href="{{ '/assets/css/app.css' | absolute_url }}">
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ea reiciendis ipsa ipsum ab aspernatur, amet similique hic. Officiis quae voluptatem architecto culpa omnis voluptas sit quos. Voluptatibus, fugit saepe?</p>
-    <div class="uk-alert-primary" uk-alert>
-        <a class="uk-alert-close" uk-close></a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+    <div class="ui-container uk-padding uk-height-1-1">
+        <div class="uk-height-1-1" uk-grid>
+            <div class="uk-width-expand">
+                <div class="uk-height-1-1" uk-grid>
+                    <div class="uk-width-1-3">
+                        <div class="uk-card uk-height-1-1">
+                            <div class="uk-border-rounded-5 uk-box-shadow-5 uk-height-1-1 uk-background-cover uk-background-center-center uk-background-norepeat" 
+                            style="background-image:url('http://slimhamdi.net/tunis/light/img/light.jpg')"></div>
+                        </div>
+                    </div>
+                    <div class="uk-width-expand">
+                        <div class="uk-article uk-margin-large-top">
+                            <h1 class="uk-article-title"><a class="uk-link-reset" href="">Heading</a></h1>
+            
+                            <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012. Posted in <a href="#">Blog</a></p>
+                        
+                            <p class="uk-text-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-small uk-flex">
+                <hr class="uk-divider-vertical uk-height-1-1">
+                <ul class="uk-iconnav uk-iconnav-vertical uk-height-1-1 uk-flex uk-flex-center" id="mt-side-nav">
+                    <li class="my1 uk-text-bolder"><a href="#" class="uk-link-reset uk-flex-center uk-flex" uk-icon="icon: trash"><span class="ml1 uk-text-middle">Trash</span></a></li>
+                    <li class="my1 uk-text-bolder"><a href="#" class="uk-link-reset uk-flex-center uk-flex" uk-icon="icon: trash"><span class="ml1 uk-text-middle">Trash</span></a></li>
+                    <li class="my1 uk-text-bolder"><a href="#" class="uk-link-reset uk-flex-center uk-flex" uk-icon="icon: trash"><span class="ml1 uk-text-middle">Trash</span></a></li>
+                    <li class="my1 uk-text-bolder"><a href="#" class="uk-link-reset uk-flex-center uk-flex" uk-icon="icon: trash"><span class="ml1 uk-text-middle">Trash</span></a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+    
+    <script src="{{ '/assets/js/app.bundle.js' | absolute_url }}"></script>
 </body>
 </html>
