@@ -1,15 +1,5 @@
 @import mixins
-@import variables
-@import style
 
-@for $i from 2 through $border-radius-count
-    .uk-border-rounded-#{$i}
-        +border-radius($i)
-
-@for $i from 1 through $box-shadow-count
-    .uk-box-shadow-#{$i}
+@for $i from 1 through 10
+    .mt-box-shadow-#{$i}
         +box-shadow($i)
-
-@for $i from 1 through $padding-count
-    .uk-padding-#{$i}
-        +padding($i)

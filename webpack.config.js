@@ -1,6 +1,8 @@
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const RunAfterBuildPlugin = require('webpack-run-after-build-plugin');
+const autoprefixer = require('autoprefixer');
 const path = require('path');
 const yaml = require('js-yaml');
 const fs = require('fs');
@@ -10,7 +12,17 @@ let pug_path = fs.readdirSync(config.MT_directories_paths.pug);
 let _plugins = [
     new CleanWebpackPlugin() ,
     new MiniCssExtractPlugin({
-        filename: '../css/components.css'
+        filename: '../css/app.bundle.css'
+    }) ,
+    new RunAfterBuildPlugin(function() {
+        let file = 'assets/css/app.bundle.css';
+        let data = fs.readFileSync(file);
+        let fd = fs.openSync(file, 'w+');
+        let buffer = new Buffer('---\n---\n');
+        
+        fs.writeSync(fd, buffer, 0, buffer.length, 0);
+        fs.writeSync(fd, data, 0, data.length, buffer.length);
+        fs.close(fd);
     })
 ];
 
@@ -46,15 +58,36 @@ module.exports = {
                 test: /\.s[ac]ss$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader'
+                    { loader: 'css-loader', options: { importLoaders: 1 } } ,
+                    'postcss-loader' ,
+                    'sass-loader' ,
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                          ident: 'postcss',
+                          plugins: [
+                            require('tailwindcss'),
+                            autoprefixer,
+                          ]
+                        }
+                    }
                 ]
             } ,
             {
                 test: /\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    { loader: 'css-loader', options: { importLoaders: 1 } },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                          ident: 'postcss',
+                          plugins: [
+                            require('tailwindcss'),
+                            autoprefixer,
+                          ]
+                        }
+                    }
                 ]
             } ,
             {

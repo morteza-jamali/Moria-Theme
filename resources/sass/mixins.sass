@@ -1,16 +1,6 @@
-=border-radius($x)
-    border-radius: $x * 5px !important
-
 =box-shadow($x)
     @if $x >= 10
         $x : 1
     @else 
         $x : $x / 10
     box-shadow: 0 5px 15px rgba(0, 0, 0, $x) !important
-
-=padding($x)
-    padding: $x * 5px !important
-
-=square($x)
-    width: $x
-    height: $x
